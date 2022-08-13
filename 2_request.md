@@ -7,6 +7,8 @@ Let's explore request configuration step by step.
 
 ![request](/images/first-request-sent-v9-4.jpg)
 
+> **Pre-request Script** which will run before request and **Tests**, which will run after a response is received are described later in separate chapters.
+
 ## Method and URL
 
 At least to make a request you need to choose `HTTP method` from the dropdown list of standard methods or *just put cursor on method name and input any method name you need*.
@@ -166,3 +168,10 @@ Postman displays network information when your API returns a response. Hover ove
 When you make an https request, the network icon includes a padlock. When you hover over the icon, the network information will show additional information including certificate verification details.
 
 ![network-information](/images/https-network-info-response.jpg)
+
+### Save Response
+
+If a request has been saved in a collection, you can save responses for that request. Once the response has been returned, select *Save Response*.
+
+- Select **Save as example** to save the response as an example that you can access later. *Very useful function for later use as Documentation or automatically generated `Mock servers`*.
+- Select **Save to a file** to save the response as a JSON file.

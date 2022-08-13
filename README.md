@@ -40,3 +40,4 @@ This tutorial assumes you already know basics of [HTTP](https://developer.mozill
     - [Creating cookies](/2_request.md#creating-cookies)
   - [Responses](/2_request.md#responses)
     - [Network information](/2_request.md#network-information)
+    - [Save Response](/2_request.md#save-response)
