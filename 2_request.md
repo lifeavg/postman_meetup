@@ -117,7 +117,7 @@ Most useful are:
 - **Automatically follow redirects** (ON by default)
 - **Encode URL automatically** (ON by default) - Postman parses and encodes your request URL to maximize the chances of a successful API call. Postman encodes the characters in your URL and maps them to a representation that your API is most likely to accept. The Postman URL processor optimizes the chance of your request being effectively processed by the wide range of server implementations in use.
 
-    > The processor is turned on by default in Postman, but you can turn off encoding if you are working with an unusual server implementation. 
+    > The processor is turned on by default in Postman, but you can turn off encoding if you are working with an unusual server implementation.
 
 - **Disable cookie jar** - to disable using cookies for particular request
 

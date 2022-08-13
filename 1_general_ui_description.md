@@ -42,7 +42,7 @@ Postman workspaces enable you to organize and work together on API projects. Wit
 
 Use separate *Workspace* at least for each project you work with.
 
-When you first open Postman, you will be in your default personal workspace. You can create more workspaces for your personal use and to work with teammates. 
+When you first open Postman, you will be in your default personal workspace. You can create more workspaces for your personal use and to work with teammates.
 
 > Never ever use **Public** *Workspace* unless you are working with *open source* (even then better think twice).
 
@@ -80,7 +80,7 @@ Postman's cookie manager enables you to view and edit cookies that are associate
 - **Mock servers** - Make requests that return mock data if you do not have a production API ready, or you do not want to run your requests against real data yet. By adding a mock server to your collection and adding examples to your requests, you can simulate the behavior of a real API.
 - **Monitors** - Give you continuous visibility into the health and performance of your APIs. *Almost useless for complex projects with existing automated tests.*
 - **Flows** - A visual tool to create API workflows. Chain requests, handle data and create real world workflows right in your Postman workspace. *UI builder to run multiple requests one by one with some logic like which request should be run depending on response of previous.*
-- **History** - Simly history of collections, requests e.t.c. you've run.
+- **History** - Simply history of collections, requests e.t.c. you've run.
 
 ## Right sidebar
 
