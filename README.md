@@ -3,6 +3,7 @@
 ## Sources
 
 - [Postman Learning Center](https://learning.postman.com/docs/getting-started/introduction/)
+- [10 Tips for Working with Postman Variables](https://blog.postman.com/10-tips-for-working-with-postman-variables/)
 
 ## Introduction
 
@@ -42,3 +43,8 @@ This tutorial assumes you already know basics of [HTTP](https://developer.mozill
     - [Network information](/2_request.md#network-information)
     - [Save Response](/2_request.md#save-response)
 - [Collections](/3_collections.md)
+- [Environments and variables](/4_environments_and_var_scopes.md)
+  - [Variables](/4_environments_and_var_scopes.md#variables)
+  - [Variable scopes](/4_environments_and_var_scopes.md#variable-scopes)
+  - [Environment (/global)](/4_environments_and_var_scopes.md#environment-global)
+  - [Variable scope hierarchy](/4_environments_and_var_scopes.md#variable-scope-hierarchy)
