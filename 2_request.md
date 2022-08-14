@@ -175,3 +175,17 @@ If a request has been saved in a collection, you can save responses for that req
 
 - Select **Save as example** to save the response as an example that you can access later. *Very useful function for later use as Documentation or automatically generated `Mock servers`*.
 - Select **Save to a file** to save the response as a JSON file.
+
+## Troubleshooting
+
+If your API request isn't behaving as expected, there can be many possible reasons. To find out what the problem is, you can use the Postman Console to troubleshoot your request. This guide also lists common issues and their causes.
+
+![console](/images/console-pane-button.jpg)
+
+The Postman Console logs the following information:
+
+- The primary request that was sent, including all underlying request headers, variable values, and redirects
+- The proxy configuration and certificates used for the request
+- Network information such as IP addresses, ciphers, and protocols used
+- Log statements and asynchronous requests from test or pre-request scripts
+- The raw response sent by the server before it's processed by Postman
