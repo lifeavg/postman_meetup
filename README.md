@@ -48,3 +48,4 @@ This tutorial assumes you already know basics of [HTTP](https://developer.mozill
   - [Variable scopes](/4_environments_and_var_scopes.md#variable-scopes)
   - [Environment (/global)](/4_environments_and_var_scopes.md#environment-global)
   - [Variable scope hierarchy](/4_environments_and_var_scopes.md#variable-scope-hierarchy)
+- [Random data with dynamic variables](/5_random_data.md)
