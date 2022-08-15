@@ -4,6 +4,7 @@
 
 - [Postman Learning Center](https://learning.postman.com/docs/getting-started/introduction/)
 - [10 Tips for Working with Postman Variables](https://blog.postman.com/10-tips-for-working-with-postman-variables/)
+- [Postman Cheatsheet](https://postman-quick-reference-guide.readthedocs.io/en/latest/cheatsheet.html)
 
 ## Introduction
 
@@ -49,3 +50,10 @@ This tutorial assumes you already know basics of [HTTP](https://developer.mozill
   - [Environment (/global)](/4_environments_and_var_scopes.md#environment-global)
   - [Variable scope hierarchy](/4_environments_and_var_scopes.md#variable-scope-hierarchy)
 - [Random data with dynamic variables](/5_random_data.md)
+- [Scripting and testing](/6_scripting_testing.md)
+  - [Execution order](/6_scripting_testing.md#execution-order)
+  - [Variables in scripts](/6_scripting_testing.md#variables-in-scripts)
+    - [Defining variables in scripts](/6_scripting_testing.md#defining-variables-in-scripts)
+    - [Accessing variables](/6_scripting_testing.md#accessing-variables)
+  - [Request and response objects](/6_scripting_testing.md#request-and-response-objects)
+  - [Order of requests in collection](/6_scripting_testing.md#order-of-requests-in-collection)

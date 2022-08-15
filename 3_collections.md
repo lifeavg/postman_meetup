@@ -30,3 +30,7 @@ Once you have created a new collection, you can customize and configure it:
 As if you have **Authorization** settings for entire collection it's good to group requests to same APIs with same credentials in one collection and set **Authorization** settings for entire collection or folder. Then just select option **Inherit auth from parent** (usually default) in **Authorization** tab of each separate request.
 
 > By now you might think that it's good idea to store two copies of API in one collection and separate folders for *production* and *test* if you have different credentials - it's NOT. For this purposes we will use **Variables** and **Environments**.
+
+To `Run` entire collection of requests one by one you can use [Collection Runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
+
+![collection-runner](/images/collection-runner.jpg)
