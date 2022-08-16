@@ -57,3 +57,7 @@ This tutorial assumes you already know basics of [HTTP](https://developer.mozill
     - [Accessing variables](/6_scripting_testing.md#accessing-variables)
   - [Request and response objects](/6_scripting_testing.md#request-and-response-objects)
   - [Order of requests in collection](/6_scripting_testing.md#order-of-requests-in-collection)
+  - [Writing tests](/6_scripting_testing.md#writing-tests)
+    - [Formatting test result messages with `pm.expect`](/6_scripting_testing.md#formatting-test-result-messages-with-pmexpect)
+  - [Troubleshooting](/6_scripting_testing.md#troubleshooting)
+    - [Common issues](/6_scripting_testing.md#common-issues)

@@ -168,4 +168,3 @@ Using log statements at appropriate locations in your test scripts can help you 
 | TLS version | Postman supports TLS version 1.2 and higher, which may not be supported if you are using an older browser or operating system. |
 | Postman errors | It's possible that Postman might be making invalid requests to your API server. You can confirm this by checking your server logs, if available. |
 | Unresolved variables | An unresolved variable isn't defined in an active scope that's available for the request it’s used in. |
-
