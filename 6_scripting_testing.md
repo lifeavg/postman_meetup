@@ -108,3 +108,64 @@ Run the specified request after this one (the request ID returned by `pm.info.re
 ``` js
 postman.setNextRequest(requestId:String):Function
 ```
+
+## Writing tests
+
+You can add tests to individual *requests*, *collections*, and *folders* in a collection. Postman includes code snippets you add and then change to suit your test logic.
+
+Define tests using the `pm.test` function, providing a name and function that returns a boolean (`true` or `false`) value indicating if the test passed or failed.
+
+Use [ChaiJS](https://www.chaijs.com/api/bdd/) BDD syntax and pm.expect in your assertions to test the response detail.
+
+For example, enter the following in the *Tests* tab of a request to test if the response status code is `200`:
+
+``` js
+pm.test("Status test", function () {
+    pm.response.to.have.status(200);
+});
+```
+
+Select Send to run your request and open *Test Results* in the response section. The tab header displays how many tests passed and how many ran in total. You can also view the number of *Passed*, *Skipped*, and *Failed* test results.
+
+### Formatting test result messages with `pm.expect`
+
+You can use different syntax variants to write your tests in a way that you find readable, and that suits your application and testing logic.
+
+``` js
+pm.test("response should be okay to process", function () {
+    pm.response.to.not.be.error;
+    pm.response.to.have.jsonBody("");
+    pm.response.to.not.have.jsonBody("error");
+});
+```
+
+## Troubleshooting
+
+Using log statements at appropriate locations in your test scripts can help you debug your requests. Postman accepts the following log statements:
+
+- `console.log()`
+- `console.info()`
+- `console.warn()`
+- `console.error()`
+
+ ![console-logs](/images/console-logs-in-pane-v8.jpg)
+
+ > Or throw JS exception to stop run `throw new Error("Error description");`
+
+### Common issues
+
+| Issue | Resolving the issue |
+|-------|---------------------|
+| Connectivity | Postman fails to send your request. Check your connection by attempting to open a page in your web browser. |
+| Firewalls | Some firewalls may be configured to block non-browser connections. You will need to contact your network administrators. |
+| Proxy configuration | By default Postman uses the proxy settings configured in your operating system's network settings. |
+| SSL certificates | You may experience issues using HTTPS connections. You can turn off SSL certificate verification in Settings |
+| Client certificates | Client certificates may be required for your API server. You can add a client certificate in Settings by selecting the settings icon Settings > Certificates. |
+| Incorrect request URLs | If you are using variables or path parameters with your request, make sure the final address is structure correctly by opening the console, which will display the URL your request was sent to when it executed. |
+| Incorrect protocol | Check if you're using https:// instead of http:// in your URL (or the opposite). |
+| Short timeouts | Short timeout in Postman, the request could be timing out before completion. Increase the timeout in Settings. |
+| Invalid responses | If your server sends incorrect response encoding errors, or invalid headers, Postman may fail to interpret the response. |
+| TLS version | Postman supports TLS version 1.2 and higher, which may not be supported if you are using an older browser or operating system. |
+| Postman errors | It's possible that Postman might be making invalid requests to your API server. You can confirm this by checking your server logs, if available. |
+| Unresolved variables | An unresolved variable isn't defined in an active scope that's available for the request it’s used in. |
+
