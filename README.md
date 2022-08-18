@@ -44,6 +44,7 @@ This tutorial assumes you already know basics of [HTTP](https://developer.mozill
     - [Network information](/2_request.md#network-information)
     - [Save Response](/2_request.md#save-response)
 - [Collections](/3_collections.md)
+  - [Collection from API](/3_collections.md#collection-from-api)
 - [Environments and variables](/4_environments_and_var_scopes.md)
   - [Variables](/4_environments_and_var_scopes.md#variables)
   - [Variable scopes](/4_environments_and_var_scopes.md#variable-scopes)

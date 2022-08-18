@@ -34,3 +34,30 @@ As if you have **Authorization** settings for entire collection it's good to gro
 To `Run` entire collection of requests one by one you can use [Collection Runner](https://learning.postman.com/docs/running-collections/intro-to-collection-runs/)
 
 ![collection-runner](/images/collection-runner.jpg)
+
+## Collection from API
+
+You can import an existing API schema into your API. API schemas can be imported from a local file or directory, a URL, raw text, a code repository, or an API gateway. And generate test collection from this schema.
+
+To import your API specifications into Postman:
+
+1. From the sidebar, select *APIs*, then select *Import*.
+
+  ![import-api](/images/import-api.png)
+
+2. On *Import* tab select file or paste a link to address field of file explorer window (on some systems cold be unavailable)
+3. And follow next steps.
+
+Or create/paste API definition schema:
+
+1. From the sidebar, select *APIs*, then select *Import*.
+2. On *Create* tab select *type* and *format* of API schema.
+3. And follow next steps.
+4. Then open *definition* tab.
+
+  ![api-definition](/images/api-definition.png)
+
+4. Paste/create API schema and *Save* it
+5. Generate collection from the API
+
+![save-api](/images/save-api.jpg)
