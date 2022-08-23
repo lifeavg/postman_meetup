@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "1767049c-e398-4244-9848-8bc9b3988c85",
+		"name": "ChangeCookie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22860824"
+	},
+	"item": [
+		{
+			"name": "Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// First open \"Cookies\" menu ",
+							"// \"Domains Allowlist\" button (bottom left) ",
+							"// Add a domain to allow cookies for that domain to be accessed in scripts.",
+							"",
+							"function update(value) {",
+							"    return value ? value + \"_postfix\" : \"default_value\"",
+							"}",
+							"",
+							"// set new value",
+							"cookieJar = pm.cookies.jar()",
+							"url = pm.request.url",
+							"cookieJar.set(url, \"twitch.lohp.countryCode\", \"RU\", (error, value) => {",
+							"    if (error) {",
+							"        throw new Error(error)",
+							"    }",
+							"})",
+							"",
+							"// update",
+							"cookieJar.get(url, \"server_session_id\", (error, value) => {",
+							"    if (error) {",
+							"        throw new Error(error)",
+							"    } else {",
+							"        cookieJar.set(url, \"server_session_id\", update(value), (error, value) => {",
+							"            if (error) {",
+							"                throw new Error(error)",
+							"            }",
+							"        })",
+							"    }",
+							"})",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.twitch.tv/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"twitch",
+						"tv"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

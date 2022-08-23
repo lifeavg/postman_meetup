@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "cdb47319-5c1e-471e-aae6-d1d172870c35",
+		"name": "AccessValidation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22860824"
+	},
+	"item": [
+		{
+			"name": "ByEnvironvent",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// you'll need to define a global variable restrictedEnvs = ['PROD', ]",
+							"// and create environment with name PROD",
+							"// in real use it's better to put this into collection pre-request script",
+							"if (JSON.parse(pm.variables.get(\"restrictedEnvs\")).includes(pm.environment.name)) {",
+							"    throw new Error(\"Request is not allowed for the environment: \" + pm.environment.name)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ByMethod",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// you'll need to define a global variable restrictedMethods = ['PUT', 'DELETE', ]",
+							"// in real use it's better to put this into collection pre-request script",
+							"if (JSON.parse(pm.variables.get(\"restrictedMethods\")).includes(pm.request.method)) {",
+							"    throw new Error(\"Method is not allowed: \" + pm.request.method)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ByRequestName_FLAG",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// you'll need to define a global variable restrictedRequestFlag = _FLAG",
+							"// in real use it's better to put this into collection pre-request script",
+							"if (pm.info.requestName.includes(JSON.parse(pm.variables.get(\"restrictedRequestFlag\")))) {",
+							"    throw new Error(\"Request is not allowed: \" + pm.info.requestName)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Combined",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// you'll need to define a global variables restrictedMethods = ['PUT', 'DELETE', ] and restrictedEnvs = ['PROD', ]",
+							"// and create environment with name PROD",
+							"// in real use it's better to put this into collection pre-request script",
+							"if (JSON.parse(pm.variables.get(\"restrictedMethods\")).includes(pm.request.method) && ",
+							"    JSON.parse((pm.variables.get(\"restrictedEnvs\")).includes(pm.environment.name))) {",
+							"    throw new Error(\"Method \" + pm.request.method + \" is not allowed for \" + pm.environment.name + \" environment\")",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

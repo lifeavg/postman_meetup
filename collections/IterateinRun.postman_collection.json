@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "285a385b-b215-48c2-8d73-0e0b8f9c064b",
+		"name": "IterateinRun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22860824"
+	},
+	"item": [
+		{
+			"name": "IterateRequest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// to run this iteration choose collection / Run / Itereations = 1 and choose only IterateRequest in RUN ORDER / Run IterationRun",
+							"if (Number.isNaN(parseInt(pm.variables.get(\"iterator\")))) {",
+							"    pm.collectionVariables.set(\"iterator\", pm.variables.get(\"min\"))",
+							"}",
+							"console.log(pm.info.iteration)",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.variables.get(\"iterator\") < pm.variables.get(\"max\")) {",
+							"    next = parseInt(pm.variables.get(\"iterator\")) + 1",
+							"    pm.collectionVariables.set(\"iterator\", next)",
+							"    postman.setNextRequest(pm.info.requestName)",
+							"} else {",
+							"    pm.collectionVariables.set(\"iterator\", \"NaN\")",
+							"    postman.setNextRequest(null)",
+							"",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?iterator={{iterator}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "iterator",
+							"value": "{{iterator}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RunnerIterationNumber",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// to run this iteration choose collection / Run / Itereations = 10 and choose only IterateRequest in RUN ORDER/ Run IterationRun",
+							"// iteration numbers will be logged starting from 0",
+							"pm.collectionVariables.set(\"iterator\", pm.info.iteration)",
+							"console.log(pm.info.iteration)"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?iterator={{iterator}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "iterator",
+							"value": "{{iterator}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "iterator",
+			"value": "NaN",
+			"type": "string"
+		},
+		{
+			"key": "min",
+			"value": "10",
+			"type": "string"
+		},
+		{
+			"key": "max",
+			"value": "20",
+			"type": "string"
+		}
+	]
+}
