@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "ef4be0a6-44a4-475b-83f0-0f1fd0ba9454",
+		"name": "HTTP\\S",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22860824"
+	},
+	"item": [
+		{
+			"name": "NoProtocol",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}",
+					"host": [
+						"{{host}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VarProtocol",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{protocol}}{{host}}",
+					"host": [
+						"{{protocol}}{{host}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "protocol",
+			"value": "https://",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "example.com",
+			"type": "string"
+		}
+	]
+}
