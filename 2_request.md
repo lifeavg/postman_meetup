@@ -24,7 +24,7 @@ If you click dropdown menu od *Send* button you can download response data and s
 
 ![save-download](/images/send-download.png)
 
-> *For HTTP requests* don't add `http://` to requests, Postman will add `http` protocol automatically. Add protocol only if you need `https://` *(Further in 'Variables' section will be explained how to use 'host' variable to change protocol in one place for entire collection)*
+> *For HTTP requests* don't add `http://` to requests, Postman will add `http` protocol automatically. Add protocol only if you need `https://`
 
 ## Request parameters
 
